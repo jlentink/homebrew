@@ -11,11 +11,11 @@ class Aem < Formula
 
   if OS.mac?
     url "https://github.com/jlentink/aem/releases/download/1.0.0rc17/aem_Darwin_x86_64.tar.gz"
-    sha256 "644821dfc7cb83251a591a16e596f382b3e2834353bf25f56c990ae1cf32c895"
+    sha256 "c144ea7dc8d1af74ee0d8b71867eff11f0b947220622002545417f3e2147d461"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/jlentink/aem/releases/download/1.0.0rc17/aem_Linux_x86_64.tar.gz"
-    sha256 "4400b0838df765a15872d19636a7a6af75768beee3da5ac4462172e1aa4c8711"
+    sha256 "db81cd940beeea1639e757a19dad5d062448f93d1876c9709c1d3e1c3268b044"
   end
 
   depends_on "go"
