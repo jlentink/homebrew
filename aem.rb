@@ -5,21 +5,21 @@
 class Aem < Formula
   desc "Command line tool for AEM"
   homepage "https://github.com/jlentink/aem"
-  version "1.0.3"
+  version "1.0.4"
   license "GPL-2.0 License"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jlentink/aem/releases/download/1.0.3/aem_Darwin_x86_64.tar.gz"
-      sha256 "6e5de7665fee880fe068119b7ea11c47b6646c5e9c1a3572c0dafa754bf01c0a"
+      url "https://github.com/jlentink/aem/releases/download/1.0.4/aem_MacOS_x86_64.tar.gz"
+      sha256 "f2de6b1831b763acc86b03e65735bd699b87dd8e62d54bcea07c59f8cb161932"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/jlentink/aem/releases/download/1.0.3/aem_Linux_x86_64.tar.gz"
-      sha256 "7516158e35ce310f8e3b29d853c3f7587fed70f3d88c8be16d2f347a3834dfd0"
+      url "https://github.com/jlentink/aem/releases/download/1.0.4/aem_Linux_x86_64.tar.gz"
+      sha256 "58920ccdef86db2d9c1a4f239ffb972a58f4ef45026d69210f961f86c0fdeb04"
     end
   end
 
