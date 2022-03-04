@@ -5,31 +5,56 @@
 class Aem < Formula
   desc "Command line tool for AEM"
   homepage "https://github.com/jlentink/aem"
-  version "1.0.5"
+  version "1.0.6"
   license "GPL-2.0 License"
-  bottle :unneeded
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/jlentink/aem/releases/download/1.0.6/aem_MacOS_arm64.tar.gz"
+      sha256 "003be6cd33a2e8d0cdcaa06f76345029185ecadb5aad65ff40fe68648041a247"
+
+      def install
+        bin.install "aem"
+        bash_completion.install "completions/aem.bash" => "aem"
+        zsh_completion.install "completions/aem.zsh" => "_aem"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/jlentink/aem/releases/download/1.0.5/aem_MacOS_x86_64.tar.gz"
-      sha256 "316b31cd355fd55bfd35e2371da885cc2e9ce863dd2cbecfb7c2ab2c63cb2ef5"
+      url "https://github.com/jlentink/aem/releases/download/1.0.6/aem_MacOS_x86_64.tar.gz"
+      sha256 "57559e6a2bdf192504f9077188e32ff665ee8a810cac014b063f2a6f48296eae"
+
+      def install
+        bin.install "aem"
+        bash_completion.install "completions/aem.bash" => "aem"
+        zsh_completion.install "completions/aem.zsh" => "_aem"
+      end
     end
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jlentink/aem/releases/download/1.0.6/aem_Linux_arm64.tar.gz"
+      sha256 "1ffae308cbc9c1c379124c9e591f8d5ecaf3e743a543113de810a6cd0df6b88d"
+
+      def install
+        bin.install "aem"
+        bash_completion.install "completions/aem.bash" => "aem"
+        zsh_completion.install "completions/aem.zsh" => "_aem"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/jlentink/aem/releases/download/1.0.5/aem_Linux_x86_64.tar.gz"
-      sha256 "3a26fca02a5873b4a09e4ef5ae84892850987189c160ae73dbcc1b27e355deae"
+      url "https://github.com/jlentink/aem/releases/download/1.0.6/aem_Linux_x86_64.tar.gz"
+      sha256 "9572da28090f06d6a1a734f21d9d79ba0821db84f5c1ab60ec952800b4adeb6c"
+
+      def install
+        bin.install "aem"
+        bash_completion.install "completions/aem.bash" => "aem"
+        zsh_completion.install "completions/aem.zsh" => "_aem"
+      end
     end
   end
 
   depends_on "go"
-
-  def install
-    bin.install "aem"
-    bash_completion.install "completions/aem.bash" => "aem"
-    zsh_completion.install "completions/aem.zsh" => "_aem"
-  end
 
   test do
     system "#{bin}/aem -v"
