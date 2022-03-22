@@ -5,13 +5,13 @@
 class Aem < Formula
   desc "Command line tool for AEM"
   homepage "https://github.com/jlentink/aem"
-  version "1.0.7"
+  version "1.0.8"
   license "GPL-2.0 License"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jlentink/aem/releases/download/1.0.7/aem_MacOS_arm64.tar.gz"
-      sha256 "ea702ba6c477c399ae6a251401ee3ac24349f96850395c37efe8bc51e3d173c0"
+      url "https://github.com/jlentink/aem/releases/download/1.0.8/aem_MacOS_arm64.tar.gz"
+      sha256 "2080ec2f01ca1c93c183c6a85a528fd6e36e19f36bef55c37383eff05ece3889"
 
       def install
         bin.install "aem"
@@ -20,8 +20,8 @@ class Aem < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jlentink/aem/releases/download/1.0.7/aem_MacOS_x86_64.tar.gz"
-      sha256 "572a27f3e2767a19c86765072ac16867f11d32f3f3f1c9a1a01050ec297d46dd"
+      url "https://github.com/jlentink/aem/releases/download/1.0.8/aem_MacOS_x86_64.tar.gz"
+      sha256 "5669f974ababcc9397085a713ccabd1aae71698ee6172be8da520da5b9f0d495"
 
       def install
         bin.install "aem"
@@ -33,8 +33,8 @@ class Aem < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jlentink/aem/releases/download/1.0.7/aem_Linux_arm64.tar.gz"
-      sha256 "6a6ff206e246f176ffaec7eb01e2915a474b760a19be919a965075c5ea6ac33e"
+      url "https://github.com/jlentink/aem/releases/download/1.0.8/aem_Linux_arm64.tar.gz"
+      sha256 "0f30fe8e0a0dc0a641b11bbf802108f39fa0e77614a6385283f18d156490044c"
 
       def install
         bin.install "aem"
@@ -43,8 +43,8 @@ class Aem < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jlentink/aem/releases/download/1.0.7/aem_Linux_x86_64.tar.gz"
-      sha256 "e6fe71c00c80b8ab51274d1266aa448a62a05afa46348839f8f7d03bafcd822d"
+      url "https://github.com/jlentink/aem/releases/download/1.0.8/aem_Linux_x86_64.tar.gz"
+      sha256 "6329387afddf6dc2fbdc8a82492078c62d4cf0dbcc8925c1f633ce5656ee6e21"
 
       def install
         bin.install "aem"
